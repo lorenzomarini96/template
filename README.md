@@ -1,6 +1,6 @@
 # template
 
-[![template](https://circleci.com/gh/lorenzomarini96/template.svg?style=svg)](https://app.circleci.com/pipelines/github/lorenzomarini96)
+[![template](https://circleci.com/gh/lorenzomarini96/template.svg?style=svg)](https://app.circleci.com/pipelines/github/lorenzomarini96/template?filter=all)
 
 Minimal template for a decent repo
 
