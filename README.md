@@ -62,7 +62,7 @@ sys.path.insert(0, str(Path(os.getcwd()).parent))
 from template.module_template import func1
 
 class TestFunc1(unittest.TestCase):
-"""Unittest for the module_template"""
+    """Unittest for the module_template"""
 
     def test_int(self):
         """Test with integers"""
