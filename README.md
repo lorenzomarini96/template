@@ -49,6 +49,7 @@ links:
 ## Unittest
 
 ```python
+"""Unittest"""
 import sys
 import os
 from pathlib import Path
@@ -106,7 +107,7 @@ link: https://app.circleci.com/pipelines/github/lorenzomarini96
 
 #### Example of *config.yml*
 
-```
+```python
 # Use the latest 2.1 version of CircleCI pipeline process engine.
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
