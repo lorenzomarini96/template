@@ -13,10 +13,10 @@ Minimal template for a decent repo
 ## Module template
 
 ```python
-“””Docstrings of the module1“””
+"""Docstrings of the module1"""
 
 def func1(arg1, arg2):
-    “””
+    """
     The func1 function implements the scalar sum between
     two addends given in input.
     Parameters
@@ -29,7 +29,7 @@ def func1(arg1, arg2):
     -------
     sum : int, float
           Return the sum of arg1 with arg2.
-    “””
+    """
 
     return arg1 + arg2
 
@@ -62,7 +62,7 @@ sys.path.insert(0, str(Path(os.getcwd()).parent))
 from template.module_template import func1
 
 class TestFunc1(unittest.TestCase):
-“””Unittest for the module_template”””
+"""Unittest for the module_template"""
 
     def test_int(self):
         """Test with integers"""
