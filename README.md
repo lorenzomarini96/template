@@ -339,5 +339,28 @@ See also some inspirational sites for very cool documentation:
 
 
 
+# Read the Docs
 
+1. Go to [Read the Docs](https://readthedocs.org) to add the link (badge) to the documentation to our repository
+2. We import our project.
+3. click on +
+
+**CAUTION**: before compiling the version, go to ```Administration``` and then to ```Advance Settings``` and select ```main```
+as the default branch.
+
+4. Now we can compile the version
+5. Once the compilation is complete, click on ```Show documents``` to check the result of the compilation.
+6. Then click on ```Overview```.
+
+The badge is ready and once you click on the circled we can copy the link (in Markdown version) and paste it on the ```README.md``` file
+
+
+# Insert Badges to the Repo - Shields IO
+
+That's not all ...
+
+- Go to the site: (https://shields.io)
+- Here we will find many badges that you can insert in our ```README.md``` file in order to enrich the information on our repository.
+- Click on the desired badge and complete the link generation operation.
+- By clicking on ```Copy Markdown``` it is sufficient to copy the link copied to the ```README.md``` file
 
