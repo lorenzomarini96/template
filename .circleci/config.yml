@@ -13,7 +13,7 @@ jobs:
           pkg-manager: pip
       - run:
           name: Run tests
-          command: python -m unittest tests.test_module1
+          command: python -m unittest tests.test_module_template
 
 workflows:
   sample: # This is the name of the workflow, feel free to change it to better match your workflow.
