@@ -218,25 +218,36 @@ Let's move on to configuring sphinx with our project, and to do that, we work on
 - Add the following to the file:
 
 ```python
+# Configuration file for the Sphinx documentation builder.
+#
+# This file only contains a selection of the most common options. For a full
+# list see the documentation:
+# https://www.sphinx-doc.org/en/master/usage/configuration.html
+
 # -- Path setup ---------------------------------------------------------------
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 import os
 import sys
-package_name = 'modules'
+package_name = 'template'
 package_root = os.path.abspath('..')
 sys.path.insert(0, package_root)
 sys.path.insert(0, os.path.join(package_root, package_name))
-```
 
-**CAUTION**: In the package_name insert the name of the folder containing the modules!
+# -- Project information -----------------------------------------------------
 
-Now, insert the Extensions for autodoc:
+project = 'template'
+copyright = '2022, Lorenzo Marini'
+author = 'Lorenzo Marini'
 
-```python
+# The full version, including alpha/beta/rc tags
+release = '1.0'
+
+
 # -- General configuration ---------------------------------------------------
-# Add any Sphinx extension module names here, as strings. They can be # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom # ones.
+# Add any Sphinx extension module names here, as strings. 
+# They can be # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom # ones.
 extensions = [
     'sphinx.ext.napoleon',
     'sphinx.ext.autodoc',
@@ -247,10 +258,6 @@ extensions = [
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
 ]
-```
-
-
-```python
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 # The suffix(es) of source filenames.
@@ -267,7 +274,7 @@ master_doc = 'index'
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+language = 'en'
 
 # List of patterns, relative to source directory, that match files and # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path .
@@ -276,25 +283,30 @@ exclude_patterns = [u'_build', 'Thumbs.db', '.DS_Store']
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
 
+html_theme = 'python_docs_theme'
+
 # -- Options for LaTeX output ------------------------------------------------
+latex_engine = 'xelatex'
 latex_elements = {
-# The paper size ('letterpaper' or 'a4paper'). #
-# 'papersize': 'letterpaper',
-# The font size ('10pt', '11pt' or '12pt').
-#
-    # 'pointsize': '10pt',
-# Additional stuff for the LaTeX preamble.
-#
-    # 'preamble': '',
-    # Latex figure (float) alignment
-#
-# 'figure_align': 'htbp', }
-# Grouping the document tree into LaTeX files. List of tuples # (source start file, target name, title,
-# author, documentclass [howto, manual, or own class]).
-latex_documents = [
-(master_doc, 'operazione.tex', u'operazione Documentation', u'Lorenzo Marini', 'manual'),
-]
+    'fontpkg': r'''
+\setmainfont{DejaVu Serif}
+\setsansfont{DejaVu Sans}
+\setmonofont{DejaVu Sans Mono}
+''',
+    'preamble': r'''
+\usepackage[titles]{tocloft}
+\cftsetpnumwidth {1.25cm}\cftsetrmarg{1.5cm}
+\setlength{\cftchapnumwidth}{0.75cm}
+\setlength{\cftsecindent}{\cftchapnumwidth}
+\setlength{\cftsecnumwidth}{1.25cm}
+''',
+    'fncychap': r'\usepackage[Bjornstrup]{fncychap}',
+    'printindex': r'\footnotesize\raggedright\printindex',
+}
+latex_show_urls = 'footnote'
 ```
+
+**CAUTION**: In the package_name insert the name of the folder containing the modules!
 
 - Now, create an ```api.rst``` file.
 - Save it in the ```docs``` folder.
@@ -303,14 +315,16 @@ latex_documents = [
 API documentation
 =================
 
-module1
--------
+module_template
+---------------
 
-.. automodule:: module1
+.. automodule:: module_template
    :members:
    
 ```
+
 - Open ```index.rst``` and add
+
 ```
 packagemodel's documentation
 ============================
@@ -323,6 +337,7 @@ packagemodel is a Python-based package that allows you to compute the sum of two
     
     api
 ```
+
 **CAUTION**: leave a blank line between one and the other!
 
 - Then, type: ```$ make html```
@@ -336,7 +351,6 @@ See also some inspirational sites for very cool documentation:
 - [Example on how to document your Python docstrings](https://thomas-cokelaer.info/tutorials/sphinx/docstring_python.html)
 - [How to include test in your Python docstrings using doctest](https://thomas-cokelaer.info/tutorials/sphinx/doctest.html)
 - [Sphinx Themes](https://sphinx-themes.org)
-
 
 
 # Read the Docs
