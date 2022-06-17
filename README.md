@@ -1,4 +1,7 @@
 # template
+
+[![template](https://circleci.com/gh/lorenzomarini96/template.svg?style=svg)](https://app.circleci.com/pipelines/github/lorenzomarini96)
+
 Minimal template for a decent repo
 
 # Basic commands
