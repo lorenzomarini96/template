@@ -7,7 +7,7 @@ Minimal template for a decent repo
 
 - ```git clone https://github.com/lorenzomarini96/template.git```
 - ```cd template```
-- ```mkdir template tests docs .circle```
+- ```mkdir template tests docs .circleci```
 - ```touch requirements.txt template/module_template.py template/__init__.py tests/__init__.py tests/test_module_template.py test/Makefile .circle/config.yml setup.py```
 
 ## Module template
