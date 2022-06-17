@@ -39,7 +39,7 @@ if __name__ == "__main__":
 
 ```
 
-**Suggestion**: run *pylint* before to commit!
+**Suggestion**: run *pylint* before to commit! (or also pycodestyle)
 
 links:
 - https://pylint.pycqa.org/en/latest/
